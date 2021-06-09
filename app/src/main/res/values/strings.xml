@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AiQuiTion</string>
+    <string name="dummyDate">8 Juni</string>
+    <string name="backbutton">BackButton</string>
+    <string name="icon">icon</string>
+    <string name="no_data">Tidak Ada Data</string>
+
+    <string name="city">Jakarta</string>
+    <string name="aqi">370</string>
+    <string name="condition">Sehat</string>
+    <string name="O3">O3</string>
+    <string name="val_O3">100</string>
+    <string name="senyawa">SO2</string>
+    <string name="val_senyawa">400</string>
+    <string name="pollution">PM10</string>++
+    <string name="val_pollution">500</string>
+    <string name="particle">O2</string>
+    <string name="val_particle">600</string>
+    <string name="NO2">NO2</string>
+    <string name="val_NO2">600</string>
+    <string name="tittle">Today</string>
+    <string name="bt_prediction">Lihat Lebih Lengkap </string>
+    <string name="prediciton">Prediciton</string>
+    <string name="day">Rabu</string>
+    <string name="search">Cari Kota</string>
+</resources>

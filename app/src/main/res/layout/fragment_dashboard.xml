@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".movies.MoviesFragment"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/sehat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aqi" />
+
+            <TextView
+                android:id="@+id/titleDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="23dp"
+                android:text="@string/dummyDate"
+                android:textColor="@color/secondaryColor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/city"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleDate" />
+
+            <TextView
+                android:id="@+id/aqi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:maxLines="2"
+                android:text="@string/aqi"
+                android:textAlignment="center"
+                android:textColor="@color/primaryColor"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerBody" />
+
+            <TextView
+                android:id="@+id/condition"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/condition"
+                android:textAlignment="center"
+                android:textColor="@color/primaryColor"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img" />
+
+            <TextView
+                android:id="@+id/O3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/O3"
+                android:textColor="@color/secondaryColor"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/condition" />
+
+            <TextView
+                android:id="@+id/valueO3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/val_O3"
+                android:textColor="@color/primaryColor"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/O3" />
+
+            <TextView
+                android:id="@+id/SO2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/senyawa"
+                android:textColor="@color/secondaryColor"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/dividerCard02"
+                app:layout_constraintStart_toStartOf="@id/dividerCard"
+                app:layout_constraintTop_toBottomOf="@+id/condition" />
+
+            <TextView
+                android:id="@+id/valueSO2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/val_senyawa"
+                android:textColor="@color/primaryColor"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/dividerCard02"
+                app:layout_constraintStart_toStartOf="@id/dividerCard"
+                app:layout_constraintTop_toBottomOf="@+id/SO2" />
+
+            <TextView
+                android:id="@+id/PM10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/pollution"
+                android:textColor="@color/secondaryColor"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/dividerCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/condition" />
+
+            <TextView
+                android:id="@+id/valuePM10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/val_pollution"
+                android:textColor="@color/primaryColor"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/dividerCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/PM10" />
+
+            <TextView
+                android:id="@+id/O2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/particle"
+                android:textColor="@color/secondaryColor"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/dividerCard04"
+                app:layout_constraintStart_toStartOf="@id/dividerCard03"
+                app:layout_constraintTop_toBottomOf="@+id/condition" />
+
+            <TextView
+                android:id="@+id/valueO2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/val_particle"
+                android:textColor="@color/primaryColor"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/dividerCard04"
+                app:layout_constraintStart_toStartOf="@id/dividerCard03"
+                app:layout_constraintTop_toBottomOf="@+id/O2" />
+
+            <TextView
+                android:id="@+id/NO2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/NO2"
+                android:textColor="@color/secondaryColor"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/dividerCard04"
+                app:layout_constraintTop_toBottomOf="@+id/condition" />
+
+            <TextView
+                android:id="@+id/valueNO2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/val_NO2"
+                android:textColor="@color/primaryColor"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/dividerCard04"
+                app:layout_constraintTop_toBottomOf="@+id/NO2" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/itemCard"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginTop="15dp"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/valueO3">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@color/primaryColor" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/btPrediction"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/bt_prediction"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:stateListAnimator="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/titleToday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/tittle"
+                            android:textColor="@color/white"
+                            android:textSize="19sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvList"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="14dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/dividerBody2"
+                            tools:listitem="@layout/item_card_list" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/dividerBody2"
+                            android:layout_width="80dp"
+                            android:layout_height="3dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/colorAccent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/titleToday"
+                            app:riv_corner_radius="2dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/dividerBody"
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="centerCrop"
+                android:src="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleLocation"
+                app:riv_corner_radius="2dp" />
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/dividerCard"
+                android:layout_width="2dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:scaleType="centerCrop"
+                android:src="@color/colorAccent"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@id/dividerCard02"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/condition"
+                app:riv_corner_radius="2dp"
+                tools:visibility="visible" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/dividerCard02"
+                android:layout_width="2dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:scaleType="centerCrop"
+                android:src="@color/colorAccent"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@id/O3"
+                app:layout_constraintStart_toStartOf="@id/dividerBody"
+                app:layout_constraintTop_toBottomOf="@id/condition"
+                app:riv_corner_radius="2dp"
+                tools:visibility="visible" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/dividerCard03"
+                android:layout_width="2dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="110dp"
+                android:scaleType="centerCrop"
+                android:src="@color/colorAccent"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/O3"
+                app:layout_constraintTop_toBottomOf="@id/condition"
+                app:riv_corner_radius="2dp"
+                tools:visibility="visible" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/dividerCard04"
+                android:layout_width="2dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                android:scaleType="centerCrop"
+                android:src="@color/colorAccent"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/dividerCard03"
+                app:layout_constraintTop_toBottomOf="@id/condition"
+                app:riv_corner_radius="2dp"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
