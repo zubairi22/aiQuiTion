@@ -7,7 +7,6 @@ import com.bangkit.aiQuiTion.R
 import com.bangkit.aiQuiTion.data.remote.model.Aqi
 import com.bangkit.aiQuiTion.databinding.ItemCardListBinding
 
-
 class ListAdapter :
     RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
@@ -23,18 +22,23 @@ class ListAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Aqi) {
             binding.apply {
-                day.text = "Rabu"
-                when (data.aqiInfo?.category) {
-                    "Good" -> {
-                        binding.img.setImageResource(R.drawable.normal)
+                day.text = data.date.substring(0,17)
+                when (data.AQI) {
+                    in 1.0..50.0 -> {
+                        binding.condition.text = "Sehat"
+                        binding.img.setImageResource(R.drawable.sehat)
                     }
-                    "Normal" -> {
+                    in 51.0..100.0 -> {
                         binding.condition.text = "Normal"
                         binding.img.setImageResource(R.drawable.normal)
                     }
+                    in 101.0..199.0 -> {
+                        binding.condition.text = "Tidak Sehat"
+                        binding.img.setImageResource(R.drawable.bahaya)
+                    }
                     else -> {
                         binding.condition.text = "Berbahaya"
-                        binding.img.setImageResource(R.drawable.bahaya)
+                        binding.img.setImageResource(R.drawable.sangat_berbahaya)
                     }
                 }
             }

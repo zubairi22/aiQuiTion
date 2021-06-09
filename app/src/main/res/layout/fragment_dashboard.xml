@@ -168,7 +168,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/PM10" />
 
             <TextView
-                android:id="@+id/O2"
+                android:id="@+id/CO"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -181,7 +181,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/condition" />
 
             <TextView
-                android:id="@+id/valueO2"
+                android:id="@+id/valueCO"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/val_particle"
@@ -190,7 +190,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/dividerCard04"
                 app:layout_constraintStart_toStartOf="@id/dividerCard03"
-                app:layout_constraintTop_toBottomOf="@+id/O2" />
+                app:layout_constraintTop_toBottomOf="@+id/CO" />
 
             <TextView
                 android:id="@+id/NO2"

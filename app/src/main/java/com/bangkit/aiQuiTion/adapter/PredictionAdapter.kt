@@ -1,6 +1,5 @@
 package com.bangkit.aiQuiTion.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -21,20 +20,26 @@ class PredictionAdapter :
 
     inner class ListViewHolder(private val binding: ItemPredictionBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        @SuppressLint("SetTextI18n")
         fun bind(data: Aqi) {
             binding.apply {
-                date.text = "8 Juni"
-                day.text = "Rabu" + " ,"
-                condition.text = data.aqiInfo?.category
-                if (data.aqiInfo?.category == "Good") {
-                    binding.img.setImageResource(R.drawable.normal)
-                } else if (data.aqiInfo?.category == "Bad") {
-                    binding.condition.text = "Berbahaya"
-                    binding.img.setImageResource(R.drawable.bahaya)
-                } else {
-                    binding.condition.text = "Normal"
-                    binding.img.setImageResource(R.drawable.normal)
+                day.text = data.date.substring(0,17)
+                when (data.AQI) {
+                    in 1.0..50.0 -> {
+                        binding.condition.text = "Sehat"
+                        binding.img.setImageResource(R.drawable.sehat)
+                    }
+                    in 51.0..100.0 -> {
+                        binding.condition.text = "Normal"
+                        binding.img.setImageResource(R.drawable.normal)
+                    }
+                    in 101.0..199.0 -> {
+                        binding.condition.text = "Tidak Sehat"
+                        binding.img.setImageResource(R.drawable.bahaya)
+                    }
+                    else -> {
+                        binding.condition.text = "Berbahaya"
+                        binding.img.setImageResource(R.drawable.sangat_berbahaya)
+                    }
                 }
             }
         }
@@ -56,4 +61,4 @@ class PredictionAdapter :
 
     override fun getItemCount(): Int = list.size
 
-}
+}}

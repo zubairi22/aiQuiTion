@@ -15,16 +15,16 @@ import retrofit2.Response
 class SearchViewModel() : ViewModel() {
     private val  listData = MutableLiveData<ArrayList<Aqi>>()
 
-    fun setDataList(city : String) {
+    fun setDataList() {
         RetrofitClient.apiInstance
-            .getData(city, AirAPI.API_KEY)
+            .getData()
             .enqueue(object : Callback<AirResponse> {
                 override fun onResponse(
                     call: Call<AirResponse>,
                     response: Response<AirResponse>
                 ) {
                     if (response.isSuccessful) {
-                        listData.postValue(response.body()?.stations)
+                        listData.postValue(response.body()?.pollutant)
                     } else {
                         Log.e("Failure", "onFailure: ${response.message()}")
                     }

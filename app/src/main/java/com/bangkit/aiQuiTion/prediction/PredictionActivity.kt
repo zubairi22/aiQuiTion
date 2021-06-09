@@ -41,6 +41,7 @@ class PredictionActivity : AppCompatActivity() {
             if (it != null) {
                 adapter.setData(it)
                 binding.titleLocation.text = it[0].city
+                binding.titleDate.text = it[0].date.substring(0,17)
             }
             binding.progressBar.visibility = View.INVISIBLE
         })

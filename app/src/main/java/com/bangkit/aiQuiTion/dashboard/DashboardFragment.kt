@@ -1,5 +1,6 @@
 package com.bangkit.aiQuiTion.dashboard
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,7 +20,6 @@ class DashboardFragment : Fragment() {
 
     private var _fragmentDashboardBinding: FragmentDashboardBinding? = null
     private val binding get() = _fragmentDashboardBinding!!
-    private val city: String = "Jakarta"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +44,7 @@ class DashboardFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showRecyclerList() {
         val viewModel = ViewModelProvider(
             this,
@@ -52,11 +53,11 @@ class DashboardFragment : Fragment() {
 
         val adapter = ListAdapter()
         adapter.notifyDataSetChanged()
-        viewModel.setDataList(city)
+        viewModel.setDataList()
 
 
         with(binding) {
-            rvList.layoutManager = LinearLayoutManager(context)
+            rvList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL ,false)
             rvList.setHasFixedSize(true)
             rvList.adapter = adapter
 
@@ -71,27 +72,34 @@ class DashboardFragment : Fragment() {
                 adapter.setData(it)
 
                 binding.titleLocation.text = it[0].city
+                binding.titleDate.text = it[0].date.substring(0,17)
                 binding.aqi.text = it[0].AQI.toString()
+
                 binding.valueSO2.text = it[0].SO2.toString()
                 binding.valuePM10.text = it[0].PM10.toString()
-                binding.valueNO2.text = it[0].PM25.toString()
-                binding.valueO3.text = it[0].CO.toString()
-                binding.valueO2.text = it[0].OZONE.toString()
+                binding.valueNO2.text = it[0].NO2.toString()
+                binding.valueCO.text = it[0].CO.toString()
+                binding.valueO3.text = it[0].O3.toString()
 
-                when (it[0].aqiInfo?.category) {
-                    "Good" -> {
+                when (it[0].AQI) {
+                    in 1.0..50.0 -> {
                         binding.condition.text = "Sehat"
                         binding.img.setImageResource(R.drawable.sehat)
                         setVisibility(true)
                     }
-                    "Normal" -> {
+                    in 51.0..100.0 -> {
                         binding.condition.text = "Normal"
                         binding.img.setImageResource(R.drawable.normal)
                         setVisibility(true)
                     }
+                    in 101.0..199.0 -> {
+                        binding.condition.text = "Tidak Sehat"
+                        binding.img.setImageResource(R.drawable.bahaya)
+                        setVisibility(true)
+                    }
                     else -> {
                         binding.condition.text = "Berbahaya"
-                        binding.img.setImageResource(R.drawable.bahaya)
+                        binding.img.setImageResource(R.drawable.sangat_berbahaya)
                         setVisibility(true)
                     }
                 }

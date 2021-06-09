@@ -15,7 +15,7 @@
     <string name="val_senyawa">400</string>
     <string name="pollution">PM10</string>++
     <string name="val_pollution">500</string>
-    <string name="particle">O2</string>
+    <string name="particle">CO</string>
     <string name="val_particle">600</string>
     <string name="NO2">NO2</string>
     <string name="val_NO2">600</string>

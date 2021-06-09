@@ -82,7 +82,7 @@ class SearchFragment : Fragment() {
         searchView.setOnQueryTextListener(object : MaterialSearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query?.let {
-                    viewModel.setDataList(it)
+                    viewModel.setDataList()
                 }
                 return true
             }

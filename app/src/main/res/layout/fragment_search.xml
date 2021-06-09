@@ -24,7 +24,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/itemCard"
         android:layout_width="match_parent"
-        android:layout_height="900dp"
+        android:layout_height="850dp"
         android:layout_marginTop="15dp"
         android:foreground="?attr/selectableItemBackground"
         app:cardCornerRadius="30dp"
@@ -40,27 +40,27 @@
                 android:layout_height="match_parent"
                 android:src="@color/primaryColor" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvList"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="315dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerBody2"
+                tools:listitem="@layout/item_prediction" />
+
             <ProgressBar
                 android:id="@+id/progress_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="visible"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="250dp"
-                android:visibility="visible" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvList"
-                tools:listitem="@layout/item_prediction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/dividerBody2" />
+                android:layout_marginTop="250dp"/>
 
         </FrameLayout>
 

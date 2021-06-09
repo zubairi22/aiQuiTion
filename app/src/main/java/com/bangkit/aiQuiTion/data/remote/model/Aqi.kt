@@ -5,14 +5,12 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Aqi (
-    val _id: String,
     val CO: Double,
     val NO2: Double,
-    val OZONE: Double,
+    val O3: Double,
     val PM10: Double,
-    val PM25: Double,
     val SO2: Double,
     val city: String,
-    val AQI: Int,
-    val aqiInfo: AqiInfo?
+    val AQI: Double,
+    val date: String
 ):Parcelable
